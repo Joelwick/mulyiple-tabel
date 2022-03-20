@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <table align="center" border="1" >
+           <tr>
+               <td colspan="2" align="center">
+                 TABLE GENEROTOR SYSTEM
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   # no of blocks
+               </td>
+               <td>
+                    <input type="number" id="val1" placeholder="input number of roll here">
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   # no of rows
+               </td>
+               <td>
+                     <input type="number" id="val2" placeholder="input number of lines here">
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2" align="center">
+                   <button id="create" onclick="generate()">multiply</button>
+               </td>
+           </tr>
+           <tr> 
+               <td colspan="2" align="center">
+                   <button id="create" onclick="generate1()">addition</button>
+               </td>
+           </tr>
+           <tr> 
+               <td colspan="2" align="center"> 
+                   <button id="create" onclick="generate2()">division</button>
+               </td>
+           </tr>
+           <tr>
+               <td colspan="2" align="center" >
+                   <button id="create" onclick="generate3()">subtraction</button>
+               </td>
+           </tr>
+        </table>
+        <div id="display"></div>
+    </div>
+    <script type="text/javascript">
+
+      function generate(){
+        var time = "";
+        var value1 = val1.value;
+        var value2 = val2.value;
+        time+='<table border="1">'
+        time+="<tr>"       
+         for(let p=1; p<=value1; p++){
+             
+               time+='<tr>'
+              for(let i=1; i<=value2; i++){
+                  time+='<td>' + i + ' x ' + p + ' = ' +(i * p) + ' </td> '
+                }
+
+            '</tr> '
+        }
+     '</table>'
+     document.getElementById('display').innerHTML = time
+      }
+     
+         function generate1(){
+            var time = "";
+        var value1 = val1.value;
+        var value2 = val2.value;
+        time+='<table border="1">'
+        for(let p=1; p<=value1; p++){
+               time+='<tr>'
+              for(let i=1; i<=value2; i++){
+                  time+='<td>' + i + ' + ' + p + ' = ' +(i + p) + ' </td> '
+                }
+
+            '</tr> '
+        }
+     '</table>'
+     document.getElementById('display').innerHTML = time
+      } 
+         
+       function generate2(){
+               var time = "";
+        var value1 = val1.value;
+        var value2 = val2.value;
+        time+='<table border="1">'
+        for(let p=1; p<=value1; p++){
+               time+='<tr>'
+              for(let i=1; i<=value2; i++){
+                  time+='<td>' + i + ' / ' + p + ' = ' +(i / p) + ' </td> '
+                }
+
+            '</tr> '
+        }
+     '</table>'
+     document.getElementById('display').innerHTML = time
+       }
+
+
+       function generate3(){
+               var time = "";
+        var value1 = val1.value;
+        var value2 = val2.value;
+        time+='<table border="1">'
+        for(let p=1; p<=value1; p++){
+               time+='<tr>'
+              for(let i=1; i<=value2; i++){
+                  time+='<td>' + i + ' - ' + p + ' = ' +(i - p) + ' </td> '
+                }
+
+            '</tr> '
+        }
+     '</table>'
+     document.getElementById('display').innerHTML = time
+       }
+     </script>
+</body>
+</html>
